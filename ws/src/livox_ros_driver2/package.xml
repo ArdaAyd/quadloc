@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>livox_ros_driver2</name>
+  <version>0.0.0</version>
+  <description>
+    YALNIZCA MESAJ TANIMI — gercek Livox surucusu DEGIL.
+
+    FAST-LIO2 derlenmek icin livox_ros_driver2/msg/CustomMsg tipine ihtiyac
+    duyuyor (src/preprocess.h ve src/laserMapping.cpp bu basligi iceriyor).
+    Bu projede Velodyne VLP-16 kullaniliyor ve FAST-LIO2 standart
+    sensor_msgs/PointCloud2 ile besleniyor (config/velodyne.yaml, lid_type 2),
+    yani Livox kod yolu hicbir zaman calismiyor.
+
+    Gercek surucu Livox-SDK2'yi (C++ kutuphanesi) ve sistem geneline kurulum
+    gerektiriyor; bu makinede sudo yok ve Livox donanimi da yok. Bu yuzden
+    yalnizca derleme bagimliligini karsilayan mesaj paketi uretildi.
+
+    Gercek Livox donanimi kullanilacaksa bu paket silinip
+    https://github.com/Livox-SDK/livox_ros_driver2 kurulmali.
+  </description>
+  <maintainer email="aydinnard@gmail.com">bitirme</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <depend>std_msgs</depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

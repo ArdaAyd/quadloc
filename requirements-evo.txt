@@ -1,0 +1,28 @@
+# evo ve bagimliliklari — temiz venv'den uretildi, 2026-10-17
+# podman run --rm bitirme:jazzy bash -c 'unset PYTHONPATH AMENT_PREFIX_PATH; python3 -m venv /tmp/tv; /tmp/tv/bin/pip install evo; /tmp/tv/bin/pip freeze'
+apsw==3.54.0.0
+argcomplete==3.7.2
+backports.zstd==1.8.0
+colorama==0.4.6
+contourpy==1.4.0
+cycler==0.12.1
+evo==1.38.0
+fonttools==4.67.0
+kiwisolver==1.5.1
+lz4==4.4.5
+matplotlib==3.11.2
+natsort==8.4.0
+numexpr==2.14.2
+numpy==2.5.4
+packaging==26.3
+pandas==3.0.6
+pillow==13.0.0
+Pygments==2.21.0
+pyparsing==3.3.3
+python-dateutil==2.9.0.post0
+PyYAML==6.0.3
+rosbags==0.11.8
+ruamel.yaml==0.19.1
+scipy==1.18.1
+seaborn==0.13.2
+six==1.17.0

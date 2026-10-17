@@ -1,0 +1,27 @@
+# Buyuk veri
+kayitlar/
+sonuclar/
+*.mcap
+*.db3
+*.bag
+*.pcd
+*.db
+
+# Python
+.venv-evo/
+__pycache__/
+*.pyc
+
+# ROS derleme ciktilari
+build/
+install/
+log/
+
+# Uretilen varliklar (tools/doku_uret.py ve tools/dokulu_dunya.py ile uretilir)
+ws/src/*/unitree_go2_description/materials/textures/*.png
+*_yukseklik.png
+
+# Kullanilmayan yedek paket
+ws/src/quadruped_ros2_control/
+ws/src/realsense2_description/
+fork_hazirlik/

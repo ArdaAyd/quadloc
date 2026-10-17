@@ -1,0 +1,8 @@
+[submodule "ws/src/FAST_LIO"]
+	path = ws/src/FAST_LIO
+	url = https://github.com/ArdaAyd/FAST_LIO.git
+	branch = bitirme
+[submodule "ws/src/unitree_go2_ros2"]
+	path = ws/src/unitree_go2_ros2
+	url = https://github.com/ArdaAyd/unitree_go2_ros2.git
+	branch = bitirme-duzeltmeleri

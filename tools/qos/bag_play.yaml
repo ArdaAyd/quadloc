@@ -1,0 +1,8 @@
+# ros2 bag play /tf_static'i VOLATILE yayinliyor, oysa TF dinleyicileri
+# (RTAB-Map dahil) TRANSIENT_LOCAL bekliyor. Uyusmazlikta oynatici
+# "No messages will be sent to it" deyip statik donusumleri HIC gondermiyor;
+# dugum "base_link does not exist" diyerek sessizce hicbir cikti uretmiyor.
+/tf_static:
+  history: keep_all
+  reliability: reliable
+  durability: transient_local
