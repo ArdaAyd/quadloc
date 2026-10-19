@@ -1,0 +1,70 @@
+# Deney yapılandırması — tek kaynak.
+#
+# champ_kosu.sh buradaki her parametreyi launch'a AÇIKÇA geçirir; launch
+# varsayılanlarına güvenilmez. Koşu sonunda bütün düğümlerin param dump'ı
+# alınır ve bu dosyayla karşılaştırılır (tools/param_dogrula.py).
+#
+# Sürüm: v0
+
+surum: v0
+
+simulasyon:
+  dunya: koridor_dokulu
+  gui: false
+  rviz: false
+  # Ayak-zemin sürtünme katsayısı (xacro FOOT_FRICTION).
+  foot_friction: 0.6
+
+temas:
+  # Durum tahmincisinin dinleyeceği topic:
+  #   foot_contacts       -> Gazebo temas sensörleri
+  #   foot_contacts/gait  -> yürüyüş fazından üretilen tahmin
+  contact_source_topic: foot_contacts
+  # Temasın BAŞLAMASI için gereken kuvvet (N). 0 = eşik kapalı.
+  min_normal_force: 0.0
+  # Temasın BİTMESİ için altına inilmesi gereken kuvvet (N).
+  # Histerezis ancak min > release iken etkindir.
+  contact_release_force: 5.0
+  # Son temas mesajından sonra ayağın "yerde" sayılma süresi (s).
+  contact_timeout: 0.05
+
+odometri:
+  # Bacak odometrisi örnekleme hızı (Hz).
+  odom_rate: 50.0
+
+tf:
+  # SLAM koşarken false yapılır; SLAM map->odom'u kendisi yayınlar.
+  publish_map_odom: true
+
+rota:
+  ad: gidis_donus:6
+  # Rota noktaları dünya çerçevesinde yorumlanır.
+  mutlak: true
+  # Ölçüm bu noktadan başlar (ölçümsüz sürüş önce buraya götürür).
+  baslangic: "3,0"
+  hiz_ms: 0.2
+
+kayit:
+  # lidar | kamera | tumu
+  profil: lidar
+  # Bacak odometrisi değerlendirmesi için gereken topicler her profilde var.
+  ortak_topicler:
+    - /clock
+    - /imu/data
+    - /joint_states
+    - /odom/ground_truth
+    - /odom/raw
+    - /foot_contacts
+    - /tf
+    - /tf_static
+
+degerlendirme:
+  # evo hizalama türü: SE(3) Umeyama (evo --align), ölçek düzeltmesi yok.
+  hizalama: SE3
+  rpe_delta_m: 1.0
+  t_max_diff_s: 0.05
+
+kosu:
+  # Devrilmede kaç kez yeniden denenir.
+  deneme: 3
+  tohum: 0
